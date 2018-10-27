@@ -15,34 +15,14 @@
         <activity android:name=".LoginEmail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".ValidadorActivity" />
         <activity android:name=".LoginActivity" />
-        <activity
-            android:name=".CadastroUsuarioActivity"
-            android:label="@string/title_activity_cadastro_usuario"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.whatsappandroid.cursoandroid.whatsapp.MainActivity" />
+        <activity android:name=".CadastroUsuarioActivity" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

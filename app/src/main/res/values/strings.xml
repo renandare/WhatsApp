@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WhatsApp</string>
+    <string name="app_name">NoivasApp</string>
     <string name="botao_cadastrar">Cadastrar</string>
     <string name="texto_validacao">Validação</string>
     <string name="botao_validar">Validar</string>
