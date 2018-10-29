@@ -59,11 +59,13 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:theme="@style/botaoPadrao"
         android:text="@string/botao_logar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_login_senha" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_login_senha"
+
+        />
 
     <TextView
         android:id="@+id/textView3"

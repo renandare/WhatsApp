@@ -1,5 +1,6 @@
 package br.com.whatsappandroid.cursoandroid.whatsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.whatsappandroid.cursoandroid.whatsapp.config.ConfiguracaoFirebase;
@@ -76,9 +80,28 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     usuario.setId(usuarioFirebase.getUid());
                     usuario.salvar();
 
-                    Toast.makeText(CadastroUsuarioActivity.this, "Sucesso ao cadastrar o usuário", Toast.LENGTH_SHORT).show();
+                    //Desloga o usuario
+                    autenticacao.signOut();
+                    Intent intent = new Intent(CadastroUsuarioActivity.this, MainActivity.class);
+                    startActivity(intent);
+
                 }else{
-                    Toast.makeText(CadastroUsuarioActivity.this, "Erro ao cadastrar o usuário", Toast.LENGTH_SHORT).show();
+                    String erroExcecao = "";
+
+                    try{
+                        throw  task.getException();
+                    } catch (FirebaseAuthWeakPasswordException e) {
+                        erroExcecao = "Digite uma senha mais forte, que contenha caracteres e letras.";
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        erroExcecao = "O e-mail digitado é inválido, digite um novo e-mail.";
+                    } catch (FirebaseAuthUserCollisionException e) {
+                        erroExcecao = "Este e-mail já está cadastrado.";
+                    } catch (Exception e) {
+                        erroExcecao = "Erro ao cadastrar o usuário";
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(CadastroUsuarioActivity.this, erroExcecao, Toast.LENGTH_LONG).show();
                 }
             }
         });

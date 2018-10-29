@@ -6,6 +6,10 @@
     <string name="botao_logar">Entrar</string>
     <string name="texto_cadastro">Não tem conta? Cadastre-se!</string>
     <string name="title_activity_cadastro_usuario">CadastroUsuarioActivity</string>
+    <string name="item_configuracoes">Configuraçoes</string>
+    <string name="item_sair">Sair</string>
+    <string name="item_pesquisa">Pesquisar</string>
+    <string name="item_adicionar">Adicionar</string>
 
 
 </resources>
