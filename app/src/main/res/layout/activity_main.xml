@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/toolbar" android:id="@+id/toolbar" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <br.com.whatsappandroid.cursoandroid.whatsapp.helper.SlidingTabLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:id="@+id/stl_tabs"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:background="@color/colorPrimary">
-
-    </br.com.whatsappandroid.cursoandroid.whatsapp.helper.SlidingTabLayout>
+        android:background="@color/colorPrimary" />
 
     <android.support.v4.view.ViewPager android:id="@+id/vp_pagina"
         android:layout_width="match_parent"

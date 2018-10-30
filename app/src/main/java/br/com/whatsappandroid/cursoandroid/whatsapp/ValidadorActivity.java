@@ -15,7 +15,7 @@ import java.util.HashMap;
 import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Preferencias;
 
 public class ValidadorActivity extends AppCompatActivity {
-
+/*
     private EditText codValidacao;
     private Button validar;
 
@@ -54,5 +54,5 @@ public class ValidadorActivity extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 }

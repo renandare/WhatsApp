@@ -25,7 +25,7 @@ import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Permissao;
 import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Preferencias;
 
 public class LoginActivity extends AppCompatActivity {
-
+/*
     private EditText nomeUsuario;
     private EditText telefone;
     private EditText codPais;
@@ -93,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                /* HashMap<String, String> usuario = preferencias.getDadosUsuario();
                 Log.i("Token", "token:" + usuario.get("token"));
                 */
+/*
             }
         });
 
@@ -134,5 +135,5 @@ public class LoginActivity extends AppCompatActivity {
         });
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
+    }*/
 }

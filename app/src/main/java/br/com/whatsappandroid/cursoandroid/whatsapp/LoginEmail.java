@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
 import br.com.whatsappandroid.cursoandroid.whatsapp.config.ConfiguracaoFirebase;
+import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Base64Custom;
+import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Preferencias;
 import br.com.whatsappandroid.cursoandroid.whatsapp.model.Usuario;
 
 public class LoginEmail extends AppCompatActivity {
@@ -61,6 +63,12 @@ public class LoginEmail extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+                    Preferencias preferencias = new Preferencias(LoginEmail.this);
+                    //Pega o e-mail do cara que fez o login
+                    String identificadorUsuarioLogado = Base64Custom.CodificarBase64(usuario.getEmail());
+                    preferencias.salvarDados(identificadorUsuarioLogado);
+
                     abrirTelaPrincipal();
                     Toast.makeText(LoginEmail.this, "Sucesso ao fazer login", Toast.LENGTH_LONG).show();
                 }else{

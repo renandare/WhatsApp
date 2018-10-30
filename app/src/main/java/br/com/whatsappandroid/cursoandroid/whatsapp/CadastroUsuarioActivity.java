@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import br.com.whatsappandroid.cursoandroid.whatsapp.config.ConfiguracaoFirebase;
 import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Base64Custom;
+import br.com.whatsappandroid.cursoandroid.whatsapp.helper.Preferencias;
 import br.com.whatsappandroid.cursoandroid.whatsapp.model.Usuario;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
@@ -79,11 +80,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
 
                     String identificadorUsuario = Base64Custom.CodificarBase64(usuario.getEmail());
+                    usuario.setId( identificadorUsuario);
+                    usuario.salvar();
+
+                    Preferencias preferencias = new Preferencias(CadastroUsuarioActivity.this);
+                    preferencias.salvarDados(identificadorUsuario);
+
                     abrirLoginUsuario();
-
-
-                    //Intent intent = new Intent(CadastroUsuarioActivity.this, MainActivity.class);
-                    //startActivity(intent);
 
                 }else{
                     String erroExcecao = "";
