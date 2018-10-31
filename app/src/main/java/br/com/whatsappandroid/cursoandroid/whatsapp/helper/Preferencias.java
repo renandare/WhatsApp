@@ -13,6 +13,7 @@ public class Preferencias {
     private final String NOME_ARQUIVO = "whatsapp.preferencias";
    // private final String CHAVE_NOME = "nome";
    private final String CHAVE_IDENTIFICADOR = "identificadorUsuarioLogado";
+    private final String CHAVE_NOME = "nomeUsuarioLogado";
    // private final String CHAVE_TELEFONE = "telefone";
     //private final String CHAVE_TOKEN = "token";
     private final int MODE = 0;
@@ -26,9 +27,10 @@ public class Preferencias {
     }
 
     //public void SalvarUsuarioPreferencias(String nome, String telefone, String token){
-    public void salvarDados(String identificadorUsuario){
+    public void salvarDados(String identificadorUsuario, String nomeUsuario){
 
         editor.putString(CHAVE_IDENTIFICADOR, identificadorUsuario);
+        editor.putString(CHAVE_NOME, nomeUsuario);
         //editor.putString(CHAVE_NOME,nome);
         //editor.putString(CHAVE_TELEFONE,telefone);
         //editor.putString(CHAVE_TOKEN,token);
@@ -49,6 +51,11 @@ public class Preferencias {
    public String getIdentificador(){
 
        return preferences.getString(CHAVE_IDENTIFICADOR, null);
-
    }
+
+    public String getNome(){
+
+        return preferences.getString(CHAVE_NOME, null);
+    }
+
 }
