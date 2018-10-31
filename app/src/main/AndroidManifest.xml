@@ -15,15 +15,26 @@
         <activity android:name=".LoginEmail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ValidadorActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".CadastroUsuarioActivity" />
+        <activity android:name=".CadastroUsuarioActivity" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity">
+            </meta-data>
+        </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".ConversaActivity" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity">
+            </meta-data>
 
+        </activity>
     </application>
 
 </manifest>
